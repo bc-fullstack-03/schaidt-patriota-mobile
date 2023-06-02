@@ -1,7 +1,9 @@
-import * as React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { House, User, UsersThree } from 'phosphor-react-native';
+import { Provider as AuthProvider, Context as AuthContext } from './src/context/AuthContext';
 
 import Login from './src/Screens/Login';
 import SignUp from './src/Screens/SignUp';
@@ -33,7 +35,7 @@ const AppTheme = {
 };
 
 function App() {
-  const isLoggedIn = false;
+  const { token, tryLocalLogin, isLoading } = useContext(AuthContext);
 
   const[fontsLoaded] = useFonts({
     Inter_400Regular,
@@ -42,13 +44,17 @@ function App() {
     Inter_900Black,
   });
 
-  if(!fontsLoaded) {
+  useEffect(() => {
+    tryLocalLogin();
+  }, [])
+
+  if(!fontsLoaded || isLoading) {
     return <Loading />
   }
 
   return (
     <NavigationContainer theme={AppTheme}>
-      {!isLoggedIn ? (
+      {!token ? (
         <Stack.Navigator
           screenOptions={{
             headerShown: false,
@@ -58,7 +64,25 @@ function App() {
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="SignUp" component={SignUp} />
         </Stack.Navigator>) : (
-          <Tab.Navigator>
+          <Tab.Navigator
+            screenOptions={({ route }) => ({
+              tabBarIcon: ({ color, size }) => {
+                switch (route.name) {
+                  case "Home":
+                    return <House size={size} color={color} />;
+                  case "Friends":
+                    return <UsersThree size={size} color={color} />;
+                  case "Profile":
+                    return <User size={size} color={color} />;
+                  default:
+                    return null;
+                }
+              },
+              tabBarStyle: {backgroundColor: THEME.COLORS.BACKGROUND_800},
+              tabBarShowLabel: false,
+              headerShown: false,
+            })}
+          >
             <Tab.Screen name="Home" component={Home}/>
             <Tab.Screen name="Friends" component={Friends}/>
             <Tab.Screen name="Profile" component={Profile}/>
@@ -68,4 +92,10 @@ function App() {
   );
 }
 
-export default App;
+export default () => {
+  return (
+    <AuthProvider>
+      <App />
+    </AuthProvider>
+  )
+};

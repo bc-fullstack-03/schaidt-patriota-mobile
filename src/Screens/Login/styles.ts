@@ -9,4 +9,9 @@ export const styles = StyleSheet.create({
         fontFamily: THEME.FONT_FAMYLI.REGULAR,
         textDecorationLine: "underline", 
     },
+
+    error: {
+        color: THEME.COLORS.ERROR,
+        textAlign: "center",
+    },
 });

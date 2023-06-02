@@ -8,12 +8,11 @@ export const styles = StyleSheet.create({
 
     containerPosition: {
         alignContent: "center",
-        marginTop: 4,
+        marginTop: 0,
         paddingBottom: 48,
     },
 
     logo: {
-        width: 100,
-        height: 100,
+        alignSelf: 'center',
     },
 });
