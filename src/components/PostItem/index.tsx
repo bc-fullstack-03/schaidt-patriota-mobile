@@ -24,6 +24,8 @@ export function PostItem({ post }: PostItemProps) {
         }
     }
 
+    console.log(post.description)
+
     return (
         <View style={styles.container}>
             <View style={styles.heading}>
@@ -34,7 +36,7 @@ export function PostItem({ post }: PostItemProps) {
                 <Text style={styles.postTitle} >{post.title}</Text>
                 <Spacer />
                 {post.image ? (
-                    <Image source={{ uri: "https://images.pexels.com/photos/3617500/pexels-photo-3617500.jpeg?cs=srgb&dl=pexels-benjamin-suter-3617500.jpg&fm=jpg"}} style={styles.image} />
+                    <Image source={{ uri: post.description}} style={styles.image} />
                     
                 ): (
                     <Text style={styles.description} >{post.description}</Text>
