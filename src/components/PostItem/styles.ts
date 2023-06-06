@@ -13,24 +13,24 @@ export const styles = StyleSheet.create({
         padding: 12,
     },
     profileName: {
-        fontFamily: THEME.FONT_FAMYLI.BOLD,
+        fontFamily: THEME.FONT_FAMILY.BOLD,
         fontSize: THEME.FONT_SIZE.MD,
         color: THEME.COLORS.TEXT,
         marginStart: 12,
     },
     postTitle: {
-        fontFamily: THEME.FONT_FAMYLI.BOLD,
+        fontFamily: THEME.FONT_FAMILY.BOLD,
         fontSize: THEME.FONT_SIZE.MD,
         color: THEME.COLORS.TEXT,
         marginStart: 12,
     },
     image: {
-        resizeMode: "contain",
-        height: 160,
+        resizeMode: "cover",
+        height: 240,
         borderRadius: 12,
     },
     description: {
-        fontFamily: THEME.FONT_FAMYLI.REGULAR,
+        fontFamily: THEME.FONT_FAMILY.REGULAR,
         fontSize: THEME.FONT_SIZE.SM,
         color: THEME.COLORS.TEXT,
         marginStart: 12,
@@ -41,7 +41,7 @@ export const styles = StyleSheet.create({
         paddingHorizontal: 24,
     },
     number: {
-        fontFamily: THEME.FONT_FAMYLI.REGULAR,
+        fontFamily: THEME.FONT_FAMILY.REGULAR,
         fontSize: THEME.FONT_SIZE.SM,
         color: THEME.COLORS.TEXT,
         marginStart: 4,

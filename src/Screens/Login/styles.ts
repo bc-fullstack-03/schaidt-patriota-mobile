@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
         color: THEME.COLORS.CAPTION_400,
         fontSize: THEME.FONT_SIZE.SM,
         textAlign: 'center',
-        fontFamily: THEME.FONT_FAMYLI.REGULAR,
+        fontFamily: THEME.FONT_FAMILY.REGULAR,
         textDecorationLine: "underline", 
     },
 

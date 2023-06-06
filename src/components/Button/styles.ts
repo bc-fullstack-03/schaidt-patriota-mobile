@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
         borderRadius: 12,
     },
     title: {
-        fontFamily: THEME.FONT_FAMYLI.SEMI_BOLD,
+        fontFamily: THEME.FONT_FAMILY.SEMI_BOLD,
         fontSize: THEME.FONT_SIZE.MD,
     },
 });

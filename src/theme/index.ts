@@ -1,5 +1,5 @@
 export const THEME = {
-    COLORS : {
+    COLORS: {
         BACKGROUND_900: "#121214",
         BACKGROUND_800: "#18181B",
         BACKGROUND_600: "#202024",
@@ -11,7 +11,7 @@ export const THEME = {
         BORDER: "#7C7C8A",
     },
 
-    FONT_FAMYLI: {
+    FONT_FAMILY: {
         REGULAR: "Inter_400Regular",
         SEMI_BOLD: "Inter_600SemiBold",
         BOLD: "Inter_700Bold",

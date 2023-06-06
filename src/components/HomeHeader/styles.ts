@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
     },
 
     userNameText: {
-        fontFamily: THEME.FONT_FAMYLI.BOLD,
+        fontFamily: THEME.FONT_FAMILY.BOLD,
         fontSize: THEME.FONT_SIZE.MD,
         color: THEME.COLORS.TEXT,
         marginStart: 12,

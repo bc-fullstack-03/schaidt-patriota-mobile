@@ -34,7 +34,8 @@ export function PostItem({ post }: PostItemProps) {
                 <Text style={styles.postTitle} >{post.title}</Text>
                 <Spacer />
                 {post.image ? (
-                    <Image source={{ uri: "https://w.forfun.com/fetch/78/786c268b412509dc4fed8a1618ce6406.jpeg?h=600&r=0.5" }} style={styles.image} />
+                    <Image source={{ uri: "https://images.pexels.com/photos/3617500/pexels-photo-3617500.jpeg?cs=srgb&dl=pexels-benjamin-suter-3617500.jpg&fm=jpg"}} style={styles.image} />
+                    
                 ): (
                     <Text style={styles.description} >{post.description}</Text>
                 )}

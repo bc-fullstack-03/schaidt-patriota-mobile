@@ -16,21 +16,21 @@ export const styles = StyleSheet.create({
 
     profileNameText: {
         color: THEME.COLORS.TEXT,
-        fontFamily: THEME.FONT_FAMYLI.BOLD,
+        fontFamily: THEME.FONT_FAMILY.BOLD,
         fontSize: THEME.FONT_SIZE.MD,
         marginStart: 8,
     },
 
     followers: {
         color: THEME.COLORS.TEXT,
-        fontFamily: THEME.FONT_FAMYLI.REGULAR,
+        fontFamily: THEME.FONT_FAMILY.REGULAR,
         fontSize: THEME.FONT_SIZE.SM,
         marginStart: 8,
     },
 
     following: {
         color: THEME.COLORS.TEXT,
-        fontFamily: THEME.FONT_FAMYLI.REGULAR,
+        fontFamily: THEME.FONT_FAMILY.REGULAR,
         fontSize: THEME.FONT_SIZE.SM,
         marginStart: 8,
     },

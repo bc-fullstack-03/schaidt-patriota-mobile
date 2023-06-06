@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     marginStart: 12,
     flex: 1,
     color: THEME.COLORS.INPUT,
-    fontFamily: THEME.FONT_FAMYLI.REGULAR,
+    fontFamily: THEME.FONT_FAMILY.REGULAR,
   },
 });
 

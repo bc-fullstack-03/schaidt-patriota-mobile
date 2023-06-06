@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { House, User, UsersThree } from 'phosphor-react-native';
 import { Provider as AuthProvider, Context as AuthContext } from './src/context/AuthContext';
+import { navigationRef } from './src/RootNavigation';
 
 import Login from './src/Screens/Login';
 import SignUp from './src/Screens/SignUp';
@@ -53,7 +54,7 @@ function App() {
   }
 
   return (
-    <NavigationContainer theme={AppTheme}>
+    <NavigationContainer theme={AppTheme} ref={navigationRef}>
       {!token ? (
         <Stack.Navigator
           screenOptions={{
