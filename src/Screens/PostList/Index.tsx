@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { FlatList, SafeAreaView, View } from "react-native";
 import { Context as AuthContext } from "../../context/AuthContext";
 import { Context as PostContext } from "../../context/PostContext";
@@ -8,23 +8,29 @@ import { HomeHeader } from "../../components/HomeHeader";
 import { PostItem } from "../../components/PostItem";
 
 export function PostList({ navigation }) {
-    const { user } = useContext(AuthContext)
-    const { posts, getPosts } = useContext(PostContext);
+  const { user } = useContext(AuthContext);
+  const { posts, getPosts } = useContext(PostContext);
 
-    useEffect (() => {
-        getPosts();
-    }, []);
-    
-    return (
-        <SafeAreaView style={styles.container}>
-            < HomeHeader navigation={navigation} user={user} />
-            <View style={styles.content}>
-                <FlatList
-                    data={posts}
-                    keyExtractor={({ _id }) => _id}
-                    renderItem={({ item }) => <PostItem post={item} />}
-                />
-            </View>
-        </SafeAreaView>
-    );
+  useEffect(() => {
+    getPosts();
+  }, []);
+
+  function handlePostPress(post) {
+    navigation.navigate("PostDetails", { post: post });
+  }
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <HomeHeader navigation={navigation} user={user} />
+      <View style={styles.content}>
+        <FlatList
+          data={posts}
+          keyExtractor={({ _id }) => _id}
+          renderItem={({ item }) => (
+            <PostItem post={item} onPress={handlePostPress} />
+          )}
+        />
+      </View>
+    </SafeAreaView>
+  );
 }

@@ -124,6 +124,10 @@ const Provider = ({ children }: { children: ReactNode }) => {
         }
     }
 
+    const createCommentPost = async ({}) => {
+        
+    }
+
     return(
         <Context.Provider
         value={{
