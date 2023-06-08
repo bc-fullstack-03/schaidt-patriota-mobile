@@ -41,8 +41,7 @@ export function PostItem({ post, onPress }: PostItemProps) {
         {post.image ? (
           <Image
             source={{
-              uri:
-                "https://w0.peakpx.com/wallpaper/830/235/HD-wallpaper-anime-jujutsu-kaisen-blue-eyes-boy-satoru-gojo-white-hair.jpg",
+              uri: post.description,
             }}
             style={styles.image}
           />
